@@ -1,5 +1,12 @@
 import datetime
+import os
 
+if os.path.exists("data.txt"):
+    with open("data.txt", "r") as file:
+        pass
+else:
+    with open("data.txt", "w") as file:
+        pass
 
 def run_tracker():
     today = datetime.date.today()

@@ -1,0 +1,8 @@
+# Habit Tracker
+
+Simple Python habit tracker project.
+
+## Features
+- Track days without a habit
+- Calculate money saved
+- Caesar cipher implementation (Day 8 practice)
