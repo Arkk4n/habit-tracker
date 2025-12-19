@@ -63,7 +63,15 @@ def main():
     stored = load_data()
     if stored:
         habit, start_date_str, daily_cost = stored
-        print(f"Last tracked habit: {habit} (since {start_date_str}), daily save: {daily_cost} €")
+        choice = input("Use saved data (y/n): ").strip().lower()
+        if choice == "y":
+            year, month, day = start_date_str.split("-")
+            start_date = datetime.date(int(year), int(month), int(day))
+            days, saved = calculate_report(start_date, daily_cost)
+            print_report(habit, days, saved)
+            return
+
+
 
     start_date = get_start_date()
     if start_date is None:
